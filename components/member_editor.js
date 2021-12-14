@@ -38,7 +38,7 @@ export default {
       <h1>skupina {{ id }}</h1>
       <h3>přidat člena</h3>
       <form>
-        <user-select :config="cfg" :onUserSelect="onUserSelect" />
+        <user-select :config="cfg" @input="onUserSelect" />
       </form>
       <h3>členové</h3>
       <ul>
