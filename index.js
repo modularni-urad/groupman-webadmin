@@ -14,12 +14,7 @@ export async function setupRoutes (routes, path, cfg, initConfig) {
   Object.assign(cfg, { 
     conf: formconfig,
     default_sort: 'slug:asc',
-    getLoadUrl: (itemId, self) => {
-      const filter = { 
-        slug: self.query._detail 
-      }
-      return `${self.cfg.url}?filter=${JSON.stringify(filter)}`
-    }
+    idattr: 'slug'
   })
 
   await initConfig(cfg)
