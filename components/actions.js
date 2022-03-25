@@ -1,17 +1,13 @@
 import { ROUTE_NAMES } from '../consts.js'
 
 export default {
-  props: ['query', 'cfg', 'row'],
+  props: ['doEdit', 'cfg', 'row'],
   computed: {
     muzuUpravit: function () {
       return this.$store.getters.isMember(this.row.group)
     }
   },
   methods: {
-    doEdit: function () {
-      const query = Object.assign({}, this.query, { _detail: this.row.slug })
-      this.$router.replace({ query })
-    },
     showMembers: function (i) {
       this.$router.push({ name: ROUTE_NAMES.members, params: { id: i.slug } })
     }
